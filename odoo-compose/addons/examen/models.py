@@ -12,7 +12,7 @@ class Vehiculos(models.Model):
     n_viajes = fields.Integer(string="Numero de viajes", required=True)
     seguro = fields.Boolean(string="Seguro", required=True)
     
-class conductor(models.Model):
+class Conductor(models.Model):
     _name = 'examen.conductor'
     _description = 'Conductor'
     
@@ -23,7 +23,7 @@ class conductor(models.Model):
     n_vehiculos = fields.Integer(string="Numero de vehiculos", required=True)
 
 
-class seguro(models.Model):
+class Seguro(models.Model):
     _name = 'examen.seguro'
     _description = 'Seguro'
     
@@ -32,7 +32,7 @@ class seguro(models.Model):
     fecha_vencimiento = fields.Date(string="Fecha de vencimiento", required=True)
     vehiculo = fields.Many2one('examen.vehiculos', string="Vehiculo")
 
-class viaje(models.Model):
+class Viaje(models.Model):
     _name = 'examen.viaje'
     _description = 'Viaje'
     
@@ -46,7 +46,7 @@ class viaje(models.Model):
     duracion_mas_de_2_horas = fields.Boolean(string="Duracion_mas_de _2_horas", default=False)
     seguro_caducado = fields.Boolean(string="Seguro_caducado", default=False)
 
-class provincia(models.Model):
+class Provincia(models.Model):
     _name = 'examen.provincia'
     _description = 'Provincia'
     

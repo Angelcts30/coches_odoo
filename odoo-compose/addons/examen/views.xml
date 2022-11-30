@@ -7,7 +7,7 @@
         <field name="view_mode">tree,form,search</field>
     </record>
      
-    <!-- add vehiculo tree view-->
+    
     <record id="vehiculo_tree_view" model="ir.ui.view">
         <field name="name">vehiculo.tree</field>
         <field name="model">examen.vehiculos</field>
@@ -21,6 +21,28 @@
             </tree>
         </field>
     </record>
+
+    <record id="Comprador_action" model="ir.actions.act_window">
+        <field name="name">Conductor</field>
+        <field name="res_model">examen.conductor</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <record id="conductor_tree_view" model="ir.ui.view">
+        <field name="name">conductor.tree</field>
+        <field name="model">examen.conductor</field>
+        <field name="arch" type="xml">
+            <tree string="Conductor">
+                <field name="nombre"/>
+                <field name="apellidos"/>
+                <field name="dni"/>
+                <field name="n_vehiculos"/>
+            </tree>
+        </field>
+    </record>
+
+
+
     <menuitem id="examen_root_menu"
     name="examen"
     sequence="10"/>
@@ -28,5 +50,10 @@
     id="vehiculo_menu"
     name="Vehiculos"
     action="Examen_action"
+    parent="examen_root_menu"/>
+    <menuitem
+    id="conductor_menu"
+    name="Conductor"
+    action="Comprador_action"
     parent="examen_root_menu"/>
 </odoo>
