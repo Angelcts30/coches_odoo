@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="Examen_action" model="ir.actions.act_window">
+        <field name="name">Vehiculos</field>
+        <field name="res_model">examen.vehiculos</field>
+        <field name="view_mode">tree,form,search</field>
+    </record>
+     
+    <!-- add vehiculo tree view-->
+    <record id="vehiculo_tree_view" model="ir.ui.view">
+        <field name="name">vehiculo.tree</field>
+        <field name="model">examen.vehiculos</field>
+        <field name="arch" type="xml">
+            <tree string="Vehiculos">
+                <field name="name"/>
+                <field name="color"/>
+                <field name="cantidad_asientos"/>
+                <field name="n_viajes"/>
+                <field name="seguro"/>
+            </tree>
+        </field>
+    </record>
+    <menuitem id="examen_root_menu"
+    name="examen"
+    sequence="10"/>
+    <menuitem
+    id="vehiculo_menu"
+    name="Vehiculos"
+    action="Examen_action"
+    parent="examen_root_menu"/>
+</odoo>
