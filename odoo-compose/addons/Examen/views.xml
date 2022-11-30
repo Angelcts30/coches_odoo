@@ -1,0 +1,10 @@
+<odoo>
+
+
+    <record model="ir.actions.act_window" id="action_exam">
+        <field name="name">Exam</field>
+        <field name="res_model">exam.exam</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>
