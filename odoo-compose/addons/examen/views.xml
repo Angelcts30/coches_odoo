@@ -41,7 +41,24 @@
         </field>
     </record>
 
-
+    <record id="Seguro_action" model="ir.actions.act_window">
+        <field name="name">Seguro</field>
+        <field name="res_model">examen.seguro</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- add seguro tree view -->
+    <record id="seguro_tree_view" model="ir.ui.view">
+        <field name="name">seguro.tree</field>
+        <field name="model">examen.seguro</field>
+        <field name="arch" type="xml">
+            <tree string="Seguro">
+                <field name="nombre_compania"/>
+                <field name="fecha_vencimiento"/>
+                <field name="vehiculo"/>
+                
+            </tree>
+        </field>
+    </record>
 
     <menuitem id="examen_root_menu"
     name="examen"
@@ -55,5 +72,10 @@
     id="conductor_menu"
     name="Conductor"
     action="Comprador_action"
+    parent="examen_root_menu"/>
+    <menuitem
+    id="seguro_menu"
+    name="Seguro"
+    action="Seguro_action"
     parent="examen_root_menu"/>
 </odoo>
